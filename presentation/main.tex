@@ -70,6 +70,24 @@
 \visible<3>{\includegraphics[scale=0.8, center]{graphics/nas.pdf}}
 \end{figure}
 \end{frame}
+%- EfficientNet
+
+\begin{frame}{Differentiable NAS}
+\vspace{10pt}
+\textit{DARTS} \cite{Liu2018} considered as pioneer work
+\vfill
+\begin{columns}
+\begin{column}{.35\textwidth}
+\begin{figure}
+	\includegraphics[scale=0.4, center]{graphics/darts_0.pdf}
+\end{figure}
+\end{column}
+\begin{column}{.3\textwidth}
+\end{column}
+\begin{column}{.35\textwidth}
+\end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{Differentiable NAS}
 \vspace{10pt}
@@ -113,6 +131,7 @@
 \end{column}
 \end{columns}
 \end{frame}
+%- "NASNet search space"
 %- aggregation function
 %	- logits versus Softmax
 %	- weighted Sum vs. Multinomial sampling
@@ -149,6 +168,7 @@ For $k\in\mathbb{N}, G\sim P^k_g$ and architecture parameters $a\in\mathbb{R}^k$
 %- distinctions to DARTS:
 %	- Macro level and thus entire search space (as opposed to single cell)
 %	- Gumbel Softmax
+%- notion of cell
 
 \begin{frame}{Relative Surrogate}
 \vspace{10pt}
@@ -170,6 +190,18 @@ Validate surrogate ranking on actual architecture performances
 \end{figure}
 \end{frame}
 %- sample random architecture test set on a space that will LATER be introduced
+%- ablation studies
+
+\begin{frame}{Architecture Regularization}
+\vspace{10pt}
+Control speed of convergence dependent on cell index
+\vfill
+\begin{figure}
+    \includegraphics[scale=0.75, center]{graphics/alpha_curves.pdf}
+    \caption{Maximum norm of architecture parameter vector per epoch per cell}
+\end{figure}
+\end{frame}
+%- ~example for ablation study
 
 \section{Beyond Finite Search Spaces}
 \begin{frame}{Search Space Extension}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.14)  17 AUG 2024 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.14)  19 AUG 2024 10:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1262,7 +1262,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 pdfTeX warning: pdflatex.exe (file ./graphics/nas.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<graphics/nas.pdf, id=140, 377.49028pt x 92.2647pt>
+<graphics/nas.pdf, id=143, 377.49028pt x 92.2647pt>
 File: graphics/nas.pdf Graphic file (type pdf)
 <use graphics/nas.pdf>
 Package pdftex.def Info: graphics/nas.pdf  used on input line 72.
@@ -1285,153 +1285,175 @@ Package pdftex.def Info: graphics/nas.pdf  used on input line 72.
 
 ]
 
+pdfTeX warning: pdflatex.exe (file ./graphics/darts_0.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<graphics/darts_0.pdf, id=227, 174.6525pt x 357.25468pt>
+File: graphics/darts_0.pdf Graphic file (type pdf)
+<use graphics/darts_0.pdf>
+Package pdftex.def Info: graphics/darts_0.pdf  used on input line 90.
+(pdftex.def)             Requested size: 69.85976pt x 142.89934pt.
+[6
+
+ <./graphics/darts_0.pdf>]
+
 pdfTeX warning: pdflatex.exe (file ./graphics/darts_1.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<graphics/darts_1.pdf, id=221, 189.8292pt x 357.25468pt>
+<graphics/darts_1.pdf, id=268, 189.8292pt x 357.25468pt>
 File: graphics/darts_1.pdf Graphic file (type pdf)
 <use graphics/darts_1.pdf>
-Package pdftex.def Info: graphics/darts_1.pdf  used on input line 89.
+Package pdftex.def Info: graphics/darts_1.pdf  used on input line 107.
 (pdftex.def)             Requested size: 75.93033pt x 142.89934pt.
-[6
+[7
 
  <./graphics/darts_1.pdf>]
 File: graphics/darts_1.pdf Graphic file (type pdf)
 <use graphics/darts_1.pdf>
-Package pdftex.def Info: graphics/darts_1.pdf  used on input line 115.
+Package pdftex.def Info: graphics/darts_1.pdf  used on input line 133.
 (pdftex.def)             Requested size: 75.93033pt x 142.89934pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./graphics/darts_2.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<graphics/darts_2.pdf, id=261, 189.8292pt x 357.25468pt>
+<graphics/darts_2.pdf, id=309, 189.8292pt x 357.25468pt>
 File: graphics/darts_2.pdf Graphic file (type pdf)
 <use graphics/darts_2.pdf>
-Package pdftex.def Info: graphics/darts_2.pdf  used on input line 115.
+Package pdftex.def Info: graphics/darts_2.pdf  used on input line 133.
 (pdftex.def)             Requested size: 75.93033pt x 142.89934pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./graphics/darts_3.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<graphics/darts_3.pdf, id=262, 180.675pt x 357.25468pt>
+<graphics/darts_3.pdf, id=310, 180.675pt x 357.25468pt>
 File: graphics/darts_3.pdf Graphic file (type pdf)
 <use graphics/darts_3.pdf>
-Package pdftex.def Info: graphics/darts_3.pdf  used on input line 115.
+Package pdftex.def Info: graphics/darts_3.pdf  used on input line 133.
 (pdftex.def)             Requested size: 72.2687pt x 142.89934pt.
-[7
+[8
 
- <./graphics/darts_2.pdf> <./graphics/darts_3.pdf>] [8
+ <./graphics/darts_2.pdf> <./graphics/darts_3.pdf>] [9
 
-] (./main.toc) [9
+] (./main.toc) [10
 
 ]
 
 pdfTeX warning: pdflatex.exe (file ./graphics/v3_search_space.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/v3_search_space.pdf, id=366, 266.91718pt x 277.9986pt>
+<graphics/v3_search_space.pdf, id=416, 266.91718pt x 277.9986pt>
 File: graphics/v3_search_space.pdf Graphic file (type pdf)
 <use graphics/v3_search_space.pdf>
-Package pdftex.def Info: graphics/v3_search_space.pdf  used on input line 143.
+Package pdftex.def Info: graphics/v3_search_space.pdf  used on input line 167.
 (pdftex.def)             Requested size: 200.18738pt x 208.49843pt.
 
-Overfull \vbox (20.21579pt too high) detected at line 143
+Overfull \vbox (20.21579pt too high) detected at line 167
  []
 
-[10
+[11
 
  <./graphics/v3_search_space.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./graphics/v2_marginals.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/v2_marginals.pdf, id=404, 523.9575pt x 388.33081pt>
+<graphics/v2_marginals.pdf, id=455, 523.9575pt x 388.33081pt>
 File: graphics/v2_marginals.pdf Graphic file (type pdf)
 <use graphics/v2_marginals.pdf>
-Package pdftex.def Info: graphics/v2_marginals.pdf  used on input line 157.
+Package pdftex.def Info: graphics/v2_marginals.pdf  used on input line 181.
 (pdftex.def)             Requested size: 199.10591pt x 147.56723pt.
-[11
+[12
 
  <./graphics/v2_marginals.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./graphics/spearman_validation.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/spearman_validation.pdf, id=438, 492.88138pt x 427.5975pt>
+<graphics/spearman_validation.pdf, id=489, 492.88138pt x 427.5975pt>
 File: graphics/spearman_validation.pdf Graphic file (type pdf)
 <use graphics/spearman_validation.pdf>
 Package pdftex.def Info: graphics/spearman_validation.pdf  used on input line 1
-66.
+91.
 (pdftex.def)             Requested size: 221.79457pt x 192.41708pt.
 
-Overfull \vbox (0.82234pt too high) detected at line 166
+Overfull \vbox (0.82234pt too high) detected at line 191
  []
 
-[12
+[13
 
- <./graphics/spearman_validation.pdf>] (./main.toc) [13
+ <./graphics/spearman_validation.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./graphics/alpha_curves.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<graphics/alpha_curves.pdf, id=523, 407.60278pt x 181.6386pt>
+File: graphics/alpha_curves.pdf Graphic file (type pdf)
+<use graphics/alpha_curves.pdf>
+Package pdftex.def Info: graphics/alpha_curves.pdf  used on input line 203.
+(pdftex.def)             Requested size: 305.70132pt x 136.22859pt.
+[14
+
+ <./graphics/alpha_curves.pdf>] (./main.toc) [15
 
 ]
 
 pdfTeX warning: pdflatex.exe (file ./graphics/search_space_extension.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/search_space_extension.pdf, id=496, 266.91718pt x 277.9986pt>
+<graphics/search_space_extension.pdf, id=583, 266.91718pt x 277.9986pt>
 File: graphics/search_space_extension.pdf Graphic file (type pdf)
 <use graphics/search_space_extension.pdf>
 Package pdftex.def Info: graphics/search_space_extension.pdf  used on input lin
-e 178.
+e 216.
 (pdftex.def)             Requested size: 200.18738pt x 208.49843pt.
 
-Overfull \vbox (25.21579pt too high) detected at line 178
+Overfull \vbox (25.21579pt too high) detected at line 216
  []
 
-[14
+[16
 
  <./graphics/search_space_extension.pdf>]
-<graphics/v2_window.png, id=535, 493.845pt x 385.44pt>
+<graphics/v2_window.png, id=622, 493.845pt x 385.44pt>
 File: graphics/v2_window.png Graphic file (type png)
 <use graphics/v2_window.png>
-Package pdftex.def Info: graphics/v2_window.png  used on input line 197.
+Package pdftex.def Info: graphics/v2_window.png  used on input line 235.
 (pdftex.def)             Requested size: 158.03362pt x 123.3433pt.
- [15
+ [17
 
  <./graphics/v2_window.png>]
-<graphics/experiments_search_space.png, id=560, 486.81876pt x 520.94624pt>
+<graphics/experiments_search_space.png, id=649, 486.81876pt x 520.94624pt>
 File: graphics/experiments_search_space.png Graphic file (type png)
 <use graphics/experiments_search_space.png>
 Package pdftex.def Info: graphics/experiments_search_space.png  used on input l
-ine 207.
+ine 245.
 (pdftex.def)             Requested size: 136.30832pt x 145.86395pt.
 
-[16
+[18
 
  <./graphics/experiments_search_space.png>]
 File: graphics/experiments_search_space.png Graphic file (type png)
 <use graphics/experiments_search_space.png>
 Package pdftex.def Info: graphics/experiments_search_space.png  used on input l
-ine 207.
+ine 245.
 (pdftex.def)             Requested size: 136.30832pt x 145.86395pt.
- [17
+ [19
 
 ]
-<graphics/traject_f2_cell1.png, id=607, 396.48125pt x 106.3975pt>
+<graphics/traject_f2_cell1.png, id=699, 396.48125pt x 106.3975pt>
 File: graphics/traject_f2_cell1.png Graphic file (type png)
 <use graphics/traject_f2_cell1.png>
-Package pdftex.def Info: graphics/traject_f2_cell1.png  used on input line 219.
+Package pdftex.def Info: graphics/traject_f2_cell1.png  used on input line 257.
 
 (pdftex.def)             Requested size: 277.53497pt x 74.47774pt.
- [18
+ [20
 
  <./graphics/traject_f2_cell1.png>]
-<graphics/benchmark.png, id=631, 1435.2822pt x 478.78876pt>
+<graphics/benchmark.png, id=724, 1435.2822pt x 478.78876pt>
 File: graphics/benchmark.png Graphic file (type png)
 <use graphics/benchmark.png>
-Package pdftex.def Info: graphics/benchmark.png  used on input line 231.
+Package pdftex.def Info: graphics/benchmark.png  used on input line 269.
 (pdftex.def)             Requested size: 315.76306pt x 105.33385pt.
 
-Overfull \hbox (8.47319pt too wide) in paragraph at lines 231--231
+Overfull \hbox (8.47319pt too wide) in paragraph at lines 269--269
  [] 
  []
 
-[19
+[21
 
- <./graphics/benchmark.png>] (./main.bbl) [20
+ <./graphics/benchmark.png>] (./main.bbl) [22
 
 ]
 \tf@nav=\write6
@@ -1448,10 +1470,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 737631E746FC7E4A1CD70120D4812330;583.
  ) 
 Here is how much of TeX's memory you used:
- 32463 strings out of 478040
- 652425 string characters out of 5843119
+ 32481 strings out of 478040
+ 652870 string characters out of 5843119
  944468 words of memory out of 5000000
- 50183 multiletter control sequences out of 15000+600000
+ 50195 multiletter control sequences out of 15000+600000
  507052 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,122p,427b,877s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1466,10 +1488,10 @@ ve/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/
 texmf-dist/fonts/type1/public/tex-gyre/qplr.pfb><c:/texlive/2022/texmf-dist/fon
 ts/type1/public/tex-gyre/qplri.pfb>
-Output written on main.pdf (20 pages, 662133 bytes).
+Output written on main.pdf (22 pages, 867035 bytes).
 PDF statistics:
- 740 PDF objects out of 1000 (max. 8388607)
- 604 compressed objects within 7 object streams
- 45 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 835 PDF objects out of 1000 (max. 8388607)
+ 686 compressed objects within 7 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
