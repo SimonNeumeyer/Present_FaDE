@@ -1,0 +1,205 @@
+Motivation
+	Expander Graph
+		- motivate by expander graphs 
+		- optimize performance under sparsity constraints
+		- they connect successive layers according to expander graphs
+		- CLICK
+		- graphs with certain properties, in this case a large spectral gap
+		- and, I don't know how, but this leads to a high connectivity of the graph,
+			which can again be quantified by path lengths etc.
+		- so, they show the suitability of such graphs for keeping performance high
+		
+		- in general we might ask the question whether we could use graph properties 
+			for selecting neural network architectures
+		- so instead of inventing such things as expander graphs or convolutions
+			manually, could we maybe adapt approaches that indicate certain correlations
+			and then we come up with explanations a posteriori
+		- the basic concern of this work is dealing with the correlation of graph
+			attributes and corresponding network performance
+		- not so much work has been dedicated to this question, yet,
+		- yes, on the one hand, there is so much focus currently on neural architecture search,
+			i.e. learning the architecture of a neural network,
+		- but there are only few that focus on graph properties only
+			(there are many others, like hyper parameters or micro structure details, filter sizes etc.)
+		- further, even if they did, they might leave such correlation implicit
+			and be rather focused on an optimal architecture
+			
+Overview
+	- instead of analyzing the question, this work analyzes one possible toolset
+	- toolset is called
+	- first present that sub field
+	- apply it to a self-defined search space,
+		analyze it,
+		analyze its ability to not only search the best architecture,
+		but to predict the performances of the complete search space 
+	- generalize it,
+		basically enlargen the search space
+	
+OSNAS
+	OSNAS
+		- one-shot model embeds multiple discrete models
+		- graphic
+		- there might be architecture parameters introduced that
+			control the flow of computation
+		- most often these are learnable in a differentiable manner
+			(%other manners include random and policy gradient)
+	DARTS
+		- to better understand the concept that we tried to generalize
+		- IMG 1
+			- considers a neural network module modeled as DAG
+			- for each vertice aims to learn the source
+				and the edge operation (e.g. filter size)
+		- IMG 2
+			- to this end they consider the densely connected graph and
+				equip each edge with an architecture scalar
+			- for each vertice the input is made up from the sum of all
+				possible input connections weighted(!) by there architecture
+				parameters
+			- that's why differentiable, that's why importance
+		- IMG 3
+			- split data and taking turn training weights and architecture
+				parameters
+			- architecture parameters of well performing edges will grow
+			- why is that? all architecture parameters for one vertice
+				are maintained as softmax -> dependent on each other
+		- IMG 4
+			- after training they obtain an architecture by taking the
+				k largest architecture scalars
+
+Applying OSNAS
+	Search Space
+		- two things on that slide
+		- first we consider a hierarchical neural network
+		- second is the architecture of one single cells
+		- in its core one cell compares several DAGs
+			by the OSNAS (or DARTS) methodology
+		- shared weights
+		- what is the result after training
+	Search space prediction
+		- How many discrete models do we consider?
+			number of cells to the number of graphs
+		- architecture parameter softmax provides a discrete density function per cell
+		- joining the marginals gives a joint density function on the space of
+			discrete architectures
+		- note that, in contrast to the DARTS paper, we consider discrete models
+			with exactly one graph per cell
+	Prediction Validation
+		- we validate our prediction on a random subset of discrete models,
+			16 in our case
+		- we train the models in that subset from scratch and obtain a performance ranking
+		- we also obtain a ranking by comparing the density function values of
+			our estimated joint architecture density
+		- CLICK
+		- now we can compare these rankings:
+			- what you see is a linear regression which serves well as visualization
+			- but for quantification we used spearman rank metric
+			- we see a quite good similarity
+		- ablation studies on one-shot training time,
+			one-shot shared weights and more
+	Conclusion
+		- Methodology
+			- regularizing architecture parameters
+			- gumbel softmax vs softmax
+		- Results
+			- good results with shared weights and little training time
+
+Generalizing OSNAS
+	Search space
+		- if we consider graph attributes we need to get away from a finite number of graphs 
+	Optimization
+		- idea is to consider one-shot model training as an inner loop and
+			introduce an outer loop that searches a set of candidates from the DAG space
+		- the resulting architecture parameters after one-shot model training are used
+			to update the search strategy
+		- we will take a look at search strategies later
+		- if we briefly take a moment and compare this to general NAS approaches
+			- we have a search strategy and an evaluation strategy
+			- interesting here is the fact that we use OSNAS to process batches of architectures
+				instead of single architectures
+			- downside is that we don't have global evaluation results but only relative
+		- we use insights derived in earlier to determine details on the inner OSNAS training,
+			e.g. reduced training time and shared weights
+	DAG search space
+		- before taking a look at search strategies, look at search space
+		- one thing upfront: it was important to me to have a finite-dimensional search space
+			and you'll see that dimensions play an important role in the way I
+			interpreted OSNAS when trying to generalize OSNAS
+		- there are several ways to obtain a finite-dimensional graph space
+		- what I did here is that I've used a paper that analyzed the same underlying question:
+			the correlation network performance and the architecture graph properties
+		- they quantified, for a certain problem domain,
+			the correlation strength of certain graph attributes
+		- I took some of their strong graph attributes and used them to
+			insert dimensions into a small space of DAGs,
+			the space of all DAGs consisting of 6 vertices
+		- another approach could be to take the hyper parameter space
+			of a graph generator,
+			I am sure there are many other approaches
+		- back to our approach: we can further make this space continuous
+			by bucketing and sampling, i.e. we cover the complete space with buckets
+			and for any point in the space we consider the corresponding bucket and
+			sample one entity from that bucket
+	Search Strategy: simulating OSNAS
+		TODO
+
+Simulating Gradient Descent
+	- I did not run experiments for simulating OSNAS,
+		because I figured my tools to coarse to operate on such a fine
+		problem setting
+	- But I did run experiments for something else, just another search strategy
+		in the space of DAGs
+	- this goes away from generalizing OSNAS, but it still uses OSNAS
+		as evaluation strategy
+	Search Strategy: simulating gradient descent
+		- the motivation of this approach is to simulate gradient descent 
+			on the non-differentiable space of DAGs
+		- we use the benefit of OSNAS to evaluate
+			a complete subset at once,
+			relative to each other (that's the drawback, but we don't mind that here)
+		- in the context of differentiability we consider a local environment, a window,
+			or, how I called it, a sliding simplex
+		- so we consider an anchor point and for each dimension of the search space,
+			we add to points to the environment, one adding a positive step to the anchor, one inverse
+		- and now the corners of that simplex are used to determine the direction
+			of the gradient
+		- CLICK
+		- to this end we evaluate all spots by a one-shot model
+			and then we need a gradient proxy function
+			that converts the architecture parameters into a gradient
+		- CLICK
+		- in our case we used a fairly easy proxy gradient that just
+			iterates all dimensions and moves a step towards the best performing spot
+		- note that we also used architecture parameter groups, one for each dimension
+		- further, let me say, that I used similar simplifications concerning the
+			gradient descent, amongst others due to a sparse, very rudimental search space
+	Evaluation
+		- I let that outer loop run for 100 epochs, i.e. 100 times gradient descent 
+			and obtained search trajectores for each dimension
+		- the darkest line is number of operations, followed by degree variance and eccentricity variance
+		- note that you see a normalized scale for unifying all dimensions,
+			e.g. for edges, 1 corresponds to 16 and 0 corresponds to 9
+		- note that we see a single cell
+		- (optional: inner dimensionality orthogonal to outer)
+		- number of edges, number of model parameters, is high -> good feedback
+		- also the stability seems to be good
+		- what is not so good, though, are these artifacts like chainsaw lines and large steps
+		- and also it seems that 100 epochs is too much, but that we converge already after 10
+		- CLICK 
+		- actually we see similar trajectories for all cells
+		- this is the aggregation of all cells
+		- here again we want to validate the approach by training discrete models from scratch,
+			so for the first 10 epochs we went along the trajectories and sampled
+			corresponding graphs and evaluated the discrete model from scratch
+		- CLICK
+		- 5 repititions for each epoch
+		- note that for each repititions we sample from the same bucket,
+			but in general we obtain a different graph
+		- this allows us again, like earlier, to compare two rankings,
+			this time taking as predicted ranking the index of the epoch,
+			assuming a better rank for each step we take
+		- this time the spearman rank correlation is very weak, around 0.2
+		- note again that we only considered the first 10 epochs
+			and the visualization is misleading
+		- for all 100 epochs the obtained rank correlation is unsignificant around 0
+		
+		
